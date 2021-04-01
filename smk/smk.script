@@ -1,0 +1,31 @@
+Window.SetBackgroundTopColor (0.16, 0.00, 0.12);     # Nice colour on top of the screen fading to
+Window.SetBackgroundBottomColor (0.16, 0.00, 0.12);  # an equally nice colour on the bottom
+
+#Window.SetBackgroundTopColor (0, 0, 0);           # Black
+#Window.SetBackgroundBottomColor (0, 0, 0);  # an equally nice brown on the bottom
+
+for (i = 0; i < 16; i++)
+{
+  image_arr[i] = Image(i + ".png");
+}
+image_sprite = Sprite();
+
+
+image_sprite.SetX(Window.GetWidth() / 2 - image_arr[0].GetWidth() / 2); # Place in the centre
+image_sprite.SetY(Window.GetHeight() / 2 - image_arr[0].GetHeight() / 2);
+
+progress = 0;
+
+fun refresh_callback ()
+  {
+    image_sprite.SetImage(image_arr[Math.Int(progress/3) % 20 ]);
+    progress++;
+  }
+  
+Plymouth.SetRefreshFunction (refresh_callback);
+
+
+#sudo update-alternatives --install /lib/plymouth/themes/default.plymouth default.plymouth /lib/plymouth/themes/mytheme/mytheme.plymouth 100
+#sudo update-alternatives --config default.plymouth
+#sudo update-initramfs -u
+
