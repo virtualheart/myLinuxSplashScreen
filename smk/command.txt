@@ -1,0 +1,5 @@
+//set anim
+sudo plymouth-set-default-theme smk -R
+
+//rebiuld .img file
+sudo update-initramfs -u   
