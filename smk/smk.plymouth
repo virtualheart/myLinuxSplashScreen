@@ -1,8 +1,0 @@
-[Plymouth Theme]
-Name=virtual-heart
-Description=This is a Plymouth theme SMK.
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/smk/
-ScriptFile=/usr/share/plymouth/themes/smk/smk.script
